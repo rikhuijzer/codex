@@ -2,4 +2,4 @@
 
 set -e
 
-Rscript -e "testthat::test_dir('tests')"
+Rscript -e "testthat::test_dir('tests', stop_on_failure=T)"
