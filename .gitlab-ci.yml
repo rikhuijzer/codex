@@ -1,0 +1,5 @@
+image: rikhuijzer/r-code:latest
+
+test:
+  script:
+    - nix-shell --pure --run './run_tests.sh'
