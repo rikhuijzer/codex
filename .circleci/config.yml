@@ -1,0 +1,8 @@
+version: 2
+jobs:
+  test:
+    docker:
+      - image: rikhuijzer/r-code
+    steps:
+      - checkout
+      - run: nix-shell --pure --run './run_tests.sh'
