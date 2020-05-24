@@ -5,4 +5,4 @@ jobs:
       - image: rikhuijzer/r-code
     steps:
       - checkout
-      - run: nix-shell --pure --run './run_tests.sh'
+      - run: nix-shell --pure --run 'Rscript -e "testthat::test_dir(\'tests\', stop_on_failure=T)'
