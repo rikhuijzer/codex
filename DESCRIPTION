@@ -1,0 +1,18 @@
+Package: codex
+Title: Various Functions with Tests and Documentation
+Version: 0.0.1.0
+Authors@R: 
+    person(given = "Rik",
+           family = "Huijzer",
+           role = c("aut", "cre"),
+           email = "t.h.huijzer@rug.nl",
+           comment = c(ORCID = "0000-0001-9445-8466"))
+Description: Stores code which I am using accross various projects.
+	For each code change, tests are executed.
+License: MIT
+URL: https://github.com/rikhuijzer/codex
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.0.2
+Suggests: 
+    testthat (>= 2.1.0)
