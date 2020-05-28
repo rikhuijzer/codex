@@ -2,11 +2,13 @@ version: 2
 jobs:
   build:
     docker:
-      - image: rikhuijzer/codex
+      - image: rikhuijzer/nix-with-r
     steps:
       - checkout
         # Timezone is handled by host and not nix-shell.
-        # This is a workaround for alpine with `tzdata`.
+        # This is a workaround for alpine.
+      - run: apk add --no-cache tzdata
       - run: mkdir -p /var/db/timezone/
       - run: ln -s /usr/share/zoneinfo/Europe/Amsterdam /var/db/timezone/localtime
+        # So, `--pure` is not completely pure; still improves determinism.
       - run: nix-shell --pure --run './run_check.sh'
