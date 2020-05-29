@@ -11,6 +11,10 @@ Description: Stores code which I am using accross various projects.
 	For each code change, tests are executed.
 License: MIT
 URL: https://github.com/rikhuijzer/codex
+BugReports: https://github.com/rikhuijzer/codex/issues
+Imports:
+	knitr (>= 1.27),
+	memoise (>= 1.1.0)
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.0.2
