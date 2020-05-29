@@ -2,6 +2,7 @@
 
 export(ap)
 export(calculate.ci.error)
+export(factor.neo)
 export(out.format)
 export(r.2)
 export(rn)

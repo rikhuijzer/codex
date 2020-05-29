@@ -5,8 +5,10 @@
 #' @param p Significance level.
 #' @importFrom stats qt
 #' @export
-calculate.ci.error <- function(n, s, p) (qt(p=p, df=n-1) * s)
 # TODO: Write test
+calculate.ci.error <- function(n, s, p) {
+	return(qt(p=p, df=n-1) * s)
+}
 
 #' Round a number to `n` digits and returns a string.
 #'
