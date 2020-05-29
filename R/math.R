@@ -3,6 +3,7 @@
 #' @param n Sample size.
 #' @param s Standard deviation.
 #' @param p Significance level.
+#' @importFrom stats qt
 #' @export
 calculate.ci.error <- function(n, s, p) (qt(p=p, df=n-1) * s)
 # TODO: Write test

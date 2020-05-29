@@ -6,3 +6,8 @@ test_that("rounding is according to spec", {
 test_that("out.format", {
 	expect_equal(out.format(), "unknown-knit-format")
 })
+
+test_that("ap", {
+	# Smoke test.
+	expect_equal(ap("@foo"), "@foo")
+})

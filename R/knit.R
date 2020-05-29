@@ -1,4 +1,3 @@
-
 #' Returns the output format used by `knitr` such as HTML or Word.
 #'
 #' @export
@@ -9,12 +8,21 @@ out.format <- memoise::memoise(function() {
 	return(format)
 })
 
+#' Returns list of PDF files in the `files` folder.
+#' 
+#' Only used by `ap`.
+pdf.files <- memoise::memoise(function() {
+	files <- list.files(path="./files", pattern="\\.pdf$", ignore.case=T)
+	files.without.extension <- tools::file_path_sans_ext(files)
+	return(files.without.extension)
+})
+
 #' Returns link to PDF if in HTML, otherwise return normal citation.
 #' 
 #' @param citation Citation string, so either `@a`, `[@a]` or `[@a; @b]`.
 #' @export 
 ap <- function(citation) {
-  if (out.format!="html") {
+  if (out.format()!="html") {
     # The hyperref links only work in HTML.
     return(citation)
   } else {
@@ -26,7 +34,7 @@ ap <- function(citation) {
       } else { # @a
         filename <- substr(citation, 2, nchar(citation))
       }
-      if (!(filename %in% pdf.files)) { 
+      if (!(filename %in% pdf.files())) { 
         return(citation)
       } else {
         str <- "<a href=\"./files/%s.pdf\" target=\"_blank\">%s</a>"
