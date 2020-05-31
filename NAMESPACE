@@ -2,6 +2,8 @@
 
 export(ap)
 export(calculate.ci.error)
+export(change.column.type)
+export(cohens.d)
 export(factor.neo)
 export(out.format)
 export(r.2)
