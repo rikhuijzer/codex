@@ -1,12 +1,10 @@
-# Hides note when running `devtools::check()`.
-utils::globalVariables(c("%>%"))
-
 #' Change the column type for one or more columns.
 #'
 #' This function ignores columns specified in `cols` which are unavailable in the dataframe.
 #' @param df Data frame.
 #' @param cols Data frame columns.
 #' @param func Function to apply to the columns.
+#' @importFrom magrittr %>%
 #' @export
 change.column.type <- function(df, cols, func) {
 	only.available <- cols[cols %in% names(df)]
